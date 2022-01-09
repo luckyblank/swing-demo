@@ -1,0 +1,26 @@
+
+
+server:
+  port: 9999
+
+spring:
+  # 配饰国际化文件的地址前缀
+  language:
+      basename: language/swingset
+
+mybatis:
+  type-aliases-package: classpath:com.wuzf.swing.dao
+
+
+logging:
+  level:
+    com.wuzf.swing.dao: debug
+  file:
+    path: output/log
+    name: D:/ouput/logs/SwingDemoLog.log
+    
+threadpool:
+  core-pool-size: 10
+  max-pool-size: 500
+  queue-capacity: 1000
+  keep-alive-seconds: 300
