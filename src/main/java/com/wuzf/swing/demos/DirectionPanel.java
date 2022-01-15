@@ -176,7 +176,7 @@ public class DirectionPanel extends JPanel {
      * @return the image icon
      */
     public ImageIcon loadImageIcon(String filename, String description) {
-	String path = "/resources/images/buttons/" + filename;
+	String path = "/static/images/buttons/" + filename;
 	return new ImageIcon(getClass().getResource(path), description);
     }
 

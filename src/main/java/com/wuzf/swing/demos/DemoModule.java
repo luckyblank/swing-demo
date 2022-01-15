@@ -220,7 +220,7 @@ public class DemoModule extends JApplet {
 	if(getSwingSet2() != null) {
 	    return getSwingSet2().createImageIcon(filename, description);
 	} else {
-	    String path = "/resources/images/" + filename;
+	    String path = "/static/images/" + filename;
 	    return new ImageIcon(getClass().getResource(path), description); 
 	}
     }
@@ -270,6 +270,7 @@ public class DemoModule extends JApplet {
     /* (non-Javadoc)
      * @see java.awt.Component#getName()
      */
+    @Override
     public String getName() {
 	return getString(getResourceName() + ".name");
     };

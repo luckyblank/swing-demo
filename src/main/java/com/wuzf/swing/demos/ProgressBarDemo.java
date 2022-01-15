@@ -113,7 +113,8 @@ public class ProgressBarDemo extends DemoModule {
 	getDemoPanel().add(progressPanel, BorderLayout.SOUTH);
 
 	progressBar = new JProgressBar(JProgressBar.HORIZONTAL, 0, text.length()) {
-	    public Dimension getPreferredSize() {
+	    @Override
+		public Dimension getPreferredSize() {
 		return new Dimension(270, super.getPreferredSize().height);
 //	    	return new Dimension(super.getPreferredSize().width,300 );
 	    }
@@ -180,7 +181,8 @@ public class ProgressBarDemo extends DemoModule {
      */
     public JButton createStopButton() {
 	stopAction = new AbstractAction(getString("ProgressBarDemo.stop_button")) {
-	    public void actionPerformed(ActionEvent e) {
+	    @Override
+		public void actionPerformed(ActionEvent e) {
 		timer.stop();
 		loadAction.setEnabled(true);
 		stopAction.setEnabled(false);
@@ -219,7 +221,8 @@ public class ProgressBarDemo extends DemoModule {
      */
     public Action createTextLoadAction() {
 	return new AbstractAction("text load action") {
-	    public void actionPerformed (ActionEvent e) {
+	    @Override
+		public void actionPerformed (ActionEvent e) {
 		if(progressBar.getValue() < progressBar.getMaximum()) {
 		    progressBar.setValue(progressBar.getValue() + 1);
 		    progressTextArea.append(text.substring(textLocation, textLocation+1));
@@ -251,14 +254,16 @@ public class ProgressBarDemo extends DemoModule {
         /* (non-Javadoc)
          * @see javax.swing.JComponent#getAlignmentX()
          */
-        public float getAlignmentX () {
+        @Override
+		public float getAlignmentX () {
             return LEFT_ALIGNMENT;
         }
  
         /* (non-Javadoc)
          * @see javax.swing.JComponent#getAlignmentY()
          */
-        public float getAlignmentY () {
+        @Override
+		public float getAlignmentY () {
             return TOP_ALIGNMENT;
         }
     }

@@ -146,13 +146,13 @@ public class LayoutControlPanel extends JPanel implements SwingConstants {
      * the orientationChange event occurs, that object's appropriate
      * method is invoked.
      *
-     * @see OrientationChangeEvent
      */
     class OrientationChangeListener implements ActionListener {
         
         /* (non-Javadoc)
          * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
          */
+        @Override
         public void actionPerformed( ActionEvent e ) {
             if( !e.getActionCommand().equals("OrientationChanged") ){
                 return;
@@ -162,32 +162,34 @@ public class LayoutControlPanel extends JPanel implements SwingConstants {
             }
             
             String currentTextPosition = textPosition.getSelection();
-            if( currentTextPosition.equals("NW") )
+            if( currentTextPosition.equals("NW") ) {
                 textPosition.setSelection("NE");
-            else if( currentTextPosition.equals("NE") )
+            } else if( currentTextPosition.equals("NE") ) {
                 textPosition.setSelection("NW");
-            else if( currentTextPosition.equals("E") )
+            } else if( currentTextPosition.equals("E") ) {
                 textPosition.setSelection("W");
-            else if( currentTextPosition.equals("W") )
+            } else if( currentTextPosition.equals("W") ) {
                 textPosition.setSelection("E");
-            else if( currentTextPosition.equals("SE") )
+            } else if( currentTextPosition.equals("SE") ) {
                 textPosition.setSelection("SW");
-            else if( currentTextPosition.equals("SW") )
+            } else if( currentTextPosition.equals("SW") ) {
                 textPosition.setSelection("SE");
+            }
 
             String currentLabelAlignment = labelAlignment.getSelection();
-            if( currentLabelAlignment.equals("NW") )
+            if( currentLabelAlignment.equals("NW") ) {
                 labelAlignment.setSelection("NE");
-            else if( currentLabelAlignment.equals("NE") )
+            } else if( currentLabelAlignment.equals("NE") ) {
                 labelAlignment.setSelection("NW");
-            else if( currentLabelAlignment.equals("E") )
+            } else if( currentLabelAlignment.equals("E") ) {
                 labelAlignment.setSelection("W");
-            else if( currentLabelAlignment.equals("W") )
+            } else if( currentLabelAlignment.equals("W") ) {
                 labelAlignment.setSelection("E");
-            else if( currentLabelAlignment.equals("SE") )
+            } else if( currentLabelAlignment.equals("SE") ) {
                 labelAlignment.setSelection("SW");
-            else if( currentLabelAlignment.equals("SW") )
+            } else if( currentLabelAlignment.equals("SW") ) {
                 labelAlignment.setSelection("SE");
+            }
         }
     }
 
@@ -200,14 +202,21 @@ public class LayoutControlPanel extends JPanel implements SwingConstants {
      * the positioning event occurs, that object's appropriate
      * method is invoked.
      *
-     * @see PositioningEvent
      */
     class PositioningListener implements ItemListener {
 
-	/* (non-Javadoc)
+        /* (non-Javadoc)
 	 * @see java.awt.event.ItemListener#itemStateChanged(java.awt.event.ItemEvent)
 	 */
-	public void itemStateChanged(ItemEvent e) {
+	public void itemStateChanged() {
+        itemStateChanged();
+    }
+
+        /* (non-Javadoc)
+	 * @see java.awt.event.ItemListener#itemStateChanged(java.awt.event.ItemEvent)
+	 */
+	@Override
+    public void itemStateChanged(ItemEvent e) {
 	    JRadioButton rb = (JRadioButton) e.getSource();
 	    if(rb.getText().equals("Absolute") && rb.isSelected()) {
 		absolutePositions = true;
@@ -252,14 +261,14 @@ public class LayoutControlPanel extends JPanel implements SwingConstants {
      * the textPosition event occurs, that object's appropriate
      * method is invoked.
      *
-     * @see TextPositionEvent
      */
     class TextPositionListener implements ActionListener {
-	
+
 	/* (non-Javadoc)
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
-	public void actionPerformed(ActionEvent e) {
+	@Override
+    public void actionPerformed(ActionEvent e) {
 	    JRadioButton rb = (JRadioButton) e.getSource();
 	    if(!rb.isSelected()) {
                 return;
@@ -306,14 +315,14 @@ public class LayoutControlPanel extends JPanel implements SwingConstants {
      * the labelAlignment event occurs, that object's appropriate
      * method is invoked.
      *
-     * @see LabelAlignmentEvent
      */
     class LabelAlignmentListener implements  ActionListener {
 	
 	/* (non-Javadoc)
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
-	public void actionPerformed(ActionEvent e) {
+	@Override
+    public void actionPerformed(ActionEvent e) {
 	    JRadioButton rb = (JRadioButton) e.getSource();
 	    if(!rb.isSelected()) {
                 return;

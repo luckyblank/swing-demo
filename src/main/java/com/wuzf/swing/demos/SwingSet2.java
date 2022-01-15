@@ -58,7 +58,8 @@ public class SwingSet2 extends JPanel {
 			"com.wuzf.swing.demos.TabbedPaneDemo",
 			"com.wuzf.swing.demos.TableDemo",
 			"com.wuzf.swing.demos.ToolTipDemo",
-			"com.wuzf.swing.demos.TreeDemo"
+			"com.wuzf.swing.demos.TreeDemo",
+			"com.wuzf.swing.demos.TextAreaDemo"
 	};
 
 	/**
@@ -264,27 +265,36 @@ public class SwingSet2 extends JPanel {
 	 * @throws Exception the exception
 	 */
 	public static void main(String[] args) throws Exception {
+
 		// Create SwingSet on the default monitor
-//		BeautyEyeLNFHelper.frameBorderStyle = 
-//			BeautyEyeLNFHelper.FrameBorderStyle.osLookAndFeelDecorated;
-////		UIManager.setLookAndFeel(BeautyEyeLNFHelper.getBeautyEyeLNFCrossPlatform());//new WindowsLookAndFeel());
-//		UIManager.put("RootPane.setupButtonVisible", false);
-		BeautyEyeLNFHelper.debug = true;
-//		BeautyEyeLNFHelper.translucencyAtFrameInactive = false;
-		BeautyEyeLNFHelper.launchBeautyEyeLNF();
-//		UIManager.put("ToolBar.border",new BorderUIResource(
-//				new org.jb2011.lnf.beautyeye.ch8_toolbar.BEToolBarUI.ToolBarBorder(UIManager.getColor("ToolBar.shadow"),
-//						UIManager.getColor("ToolBar.highlight"), new Insets(6, 0, 0, 0))));
-		
-//		JFrame.setDefaultLookAndFeelDecorated(true);
-//		JDialog.setDefaultLookAndFeelDecorated(true);
-//		UIManager.setLookAndFeel(new MetalLookAndFeel());
-//		UIManager.setLookAndFeel(new WindowsLookAndFeel());
-		
+		initBeautyStyle();
+
 		SwingSet2 swingset = new SwingSet2(null, GraphicsEnvironment.
 				getLocalGraphicsEnvironment().
 				getDefaultScreenDevice().
 				getDefaultConfiguration());
+	}
+
+	public static void initBeautyStyle(){
+		try {
+//		BeautyEyeLNFHelper.frameBorderStyle =
+//			BeautyEyeLNFHelper.FrameBorderStyle.osLookAndFeelDecorated;
+////		UIManager.setLookAndFeel(BeautyEyeLNFHelper.getBeautyEyeLNFCrossPlatform());//new WindowsLookAndFeel());
+		UIManager.put("RootPane.setupButtonVisible", false);
+		BeautyEyeLNFHelper.debug = true;
+//		BeautyEyeLNFHelper.translucencyAtFrameInactive = false;
+			BeautyEyeLNFHelper.launchBeautyEyeLNF();
+//		UIManager.put("ToolBar.border",new BorderUIResource(
+//				new org.jb2011.lnf.beautyeye.ch8_toolbar.BEToolBarUI.ToolBarBorder(UIManager.getColor("ToolBar.shadow"),
+//						UIManager.getColor("ToolBar.highlight"), new Insets(6, 0, 0, 0))));
+//		JFrame.setDefaultLookAndFeelDecorated(true);
+//		JDialog.setDefaultLookAndFeelDecorated(true);
+//		UIManager.setLookAndFeel(new MetalLookAndFeel());
+//		UIManager.setLookAndFeel(new WindowsLookAndFeel());
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("initBeautyStyle exception...");
+		}
 	}
 
 	// *******************************************************
@@ -874,7 +884,7 @@ public class SwingSet2 extends JPanel {
 		if(!isApplet() && getFrame() != null) {
 			// put swingset in a frame and show it
 			JFrame f = getFrame();
-			f.setTitle(getString("Frame.title")+" - BeautyEye L&F v3.6 (欢迎加入Java Swing QQ群:259448663)");
+			f.setTitle(getString("Frame.title")+" - BeautyEye L&F v3.6 ");
 			f.getContentPane().add(this, BorderLayout.CENTER);
 //			f.pack();
 			f.setSize(1024, 750);
@@ -911,7 +921,7 @@ public class SwingSet2 extends JPanel {
 	 * @param classname the classname
 	 */
 	void loadDemo(String classname) {
-		String afterClassName = classname.substring(classname.lastIndexOf(".")+1,classname.length());
+		String afterClassName = classname.substring(classname.lastIndexOf(".")+1);
 		setStatus(getString("Status.loading") + getString( afterClassName + ".name"));
 		DemoModule demo = null;
 		try {

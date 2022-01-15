@@ -1,11 +1,11 @@
 package com.wuzf.swing.demos;/*
- * Copyright (C) 2015 Jack Jiang(cngeeker.com) The BeautyEye Project. 
+ * Copyright (C) 2015 Jack Jiang(cngeeker.com) The BeautyEye Project.
  * All rights reserved.
  * Project URL:https://github.com/JackJiang2011/beautyeye
  * Version 3.6
- * 
+ *
  * Jack Jiang PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
- * 
+ *
  * ButtonDemo.java at 2015-2-1 20:25:39, original version by Jack Jiang.
  * You can contact author with jb2011@163.com.
  */
@@ -52,31 +52,31 @@ import org.jb2011.lnf.beautyeye.widget.N9ComponentFactory;
  * @author Jeff Dinkins
  */
 public class ButtonDemo extends DemoModule implements ChangeListener {
-    
+
     /** The tab. */
     JTabbedPane tab;
 
     /** The button panel. */
     JPanel buttonPanel = new JPanel();
-    
+
     /** The checkbox panel. */
     JPanel checkboxPanel = new JPanel();
-    
+
     /** The radio button panel. */
     JPanel radioButtonPanel = new JPanel();
-    
+
     /** The toggle button panel. */
     JPanel toggleButtonPanel = new JPanel();
 
     /** The buttons. */
     Vector buttons = new Vector();
-    
+
     /** The checkboxes. */
     Vector checkboxes = new Vector();
-    
+
     /** The radiobuttons. */
     Vector radiobuttons = new Vector();
-    
+
     /** The togglebuttons. */
     Vector togglebuttons = new Vector();
 
@@ -85,34 +85,34 @@ public class ButtonDemo extends DemoModule implements ChangeListener {
 
     /** The button. */
     JButton button;
-    
+
     /** The check. */
     JCheckBox check;
-    
+
     /** The radio. */
     JRadioButton radio;
-    
+
     /** The toggle. */
     JToggleButton toggle;
 
     /** The border0. */
     EmptyBorder border0 = new EmptyBorder(0,0,0,0);// add by jb2011 2012-08-24
-    
+
     /** The border5. */
     EmptyBorder border5 = new EmptyBorder(5,5,5,5);
-    
+
     /** The border10. */
     EmptyBorder border10 = new EmptyBorder(10,10,10,10);
 
     /** The button display listener. */
     ItemListener buttonDisplayListener = null;
-    
+
     /** The button pad listener. */
     ItemListener buttonPadListener = null;
 
     /** The insets0. */
     Insets insets0 = new Insets(0,0,0,0);
-    
+
     /** The insets10. */
     Insets insets10 = new Insets(10,10,10,10);
 
@@ -125,7 +125,7 @@ public class ButtonDemo extends DemoModule implements ChangeListener {
 	ButtonDemo demo = new ButtonDemo(null);
 	demo.mainImpl();
     }
-    
+
     /* (non-Javadoc)
      * @see DemoModule#getName()
      */
@@ -355,7 +355,7 @@ public class ButtonDemo extends DemoModule implements ChangeListener {
 
 	//modified by jb2011
 	radioButtonPanel.add(Box.createHorizontalStrut(10));//Box.createHorizontalGlue());
-	
+
 	currentControls = radiobuttons;
 	radioButtonPanel.add(createControls());
     }
@@ -464,7 +464,8 @@ public class ButtonDemo extends DemoModule implements ChangeListener {
      */
     public JPanel createControls() {
         JPanel controls = new JPanel() {
-            public Dimension getMaximumSize() {
+            @Override
+			public Dimension getMaximumSize() {
                 return new Dimension(300, super.getMaximumSize().height);
             }
         };
@@ -498,7 +499,7 @@ public class ButtonDemo extends DemoModule implements ChangeListener {
         leftColumn.add(l);
 
         JCheckBox bordered = new JCheckBox(getString("ButtonDemo.paintborder"));
-        bordered.setActionCommand("PaintBorder"); 
+        bordered.setActionCommand("PaintBorder");
         bordered.setToolTipText(getString("ButtonDemo.paintborder_tooltip"));
         bordered.setMnemonic(getMnemonic("ButtonDemo.paintborder_mnemonic"));
 	if (currentControls == buttons) {
@@ -508,7 +509,7 @@ public class ButtonDemo extends DemoModule implements ChangeListener {
         leftColumn.add(bordered);
 
         JCheckBox focused = new JCheckBox(getString("ButtonDemo.paintfocus"));
-        focused.setActionCommand("PaintFocus"); 
+        focused.setActionCommand("PaintFocus");
         focused.setToolTipText(getString("ButtonDemo.paintfocus_tooltip"));
         focused.setMnemonic(getMnemonic("ButtonDemo.paintfocus_mnemonic"));
         focused.setSelected(true);
@@ -516,7 +517,7 @@ public class ButtonDemo extends DemoModule implements ChangeListener {
         leftColumn.add(focused);
 
         JCheckBox enabled = new JCheckBox(getString("ButtonDemo.enabled"));
-        enabled.setActionCommand("Enabled"); 
+        enabled.setActionCommand("Enabled");
         enabled.setToolTipText(getString("ButtonDemo.enabled_tooltip"));
         enabled.setSelected(true);
         enabled.addItemListener(buttonDisplayListener);
@@ -524,7 +525,7 @@ public class ButtonDemo extends DemoModule implements ChangeListener {
         leftColumn.add(enabled);
 
         JCheckBox filled = new JCheckBox(getString("ButtonDemo.contentfilled"));
-        filled.setActionCommand("ContentFilled"); 
+        filled.setActionCommand("ContentFilled");
         filled.setToolTipText(getString("ButtonDemo.contentfilled_tooltip"));
         filled.setSelected(true);
         filled.addItemListener(buttonDisplayListener);
@@ -532,7 +533,7 @@ public class ButtonDemo extends DemoModule implements ChangeListener {
         leftColumn.add(filled);
 
         leftColumn.add(Box.createRigidArea(VGAP20));
-        
+
         //* modified by jb2011：改成一个灰色圆色背景的label
         // l = new JLabel(getString("ButtonDemo.padamount_label"));
         l = N9ComponentFactory.createLabel_style4(getString("ButtonDemo.padamount_label"));
@@ -547,7 +548,7 @@ public class ButtonDemo extends DemoModule implements ChangeListener {
         leftColumn.add(defaultPad);
 
         JRadioButton zeroPad = new JRadioButton(getString("ButtonDemo.zero"));
-        zeroPad.setActionCommand("ZeroPad"); 
+        zeroPad.setActionCommand("ZeroPad");
         zeroPad.setToolTipText(getString("ButtonDemo.zero_tooltip"));
         zeroPad.addItemListener(buttonPadListener);
         zeroPad.setMnemonic(getMnemonic("ButtonDemo.zero_mnemonic"));
@@ -555,7 +556,7 @@ public class ButtonDemo extends DemoModule implements ChangeListener {
         leftColumn.add(zeroPad);
 
         JRadioButton tenPad = new JRadioButton(getString("ButtonDemo.ten"));
-        tenPad.setActionCommand("TenPad"); 
+        tenPad.setActionCommand("TenPad");
         tenPad.setMnemonic(getMnemonic("ButtonDemo.ten_mnemonic"));
         tenPad.setToolTipText(getString("ButtonDemo.ten_tooltip"));
         tenPad.addItemListener(buttonPadListener);
@@ -565,7 +566,7 @@ public class ButtonDemo extends DemoModule implements ChangeListener {
         leftColumn.add(Box.createRigidArea(VGAP20));
 	return controls;
     }
-    
+
     /**
      * Creates the listeners.
      */
@@ -573,7 +574,8 @@ public class ButtonDemo extends DemoModule implements ChangeListener {
 	buttonDisplayListener = new ItemListener() {
 		Component c;
 		AbstractButton b;
-		
+
+		@Override
 		public void itemStateChanged(ItemEvent e) {
 		    JCheckBox cb = (JCheckBox) e.getSource();
 		    String command = cb.getActionCommand();
@@ -620,7 +622,8 @@ public class ButtonDemo extends DemoModule implements ChangeListener {
 	buttonPadListener = new ItemListener() {
 		Component c;
 		AbstractButton b;
-		
+
+		@Override
 		public void itemStateChanged(ItemEvent e) {
 		    // *** pad = 0
 		    int pad = -1;
@@ -631,7 +634,7 @@ public class ButtonDemo extends DemoModule implements ChangeListener {
 		    } else if(command == "TenPad" && rb.isSelected()) {
 			pad = 10;
 		    }
-		    
+
 		    for(int i = 0; i < currentControls.size(); i++) {
 			b = (AbstractButton) currentControls.elementAt(i);
 			if(pad == -1) {
@@ -648,11 +651,12 @@ public class ButtonDemo extends DemoModule implements ChangeListener {
 		}
 	};
     }
-	
+
     /* (non-Javadoc)
      * @see javax.swing.event.ChangeListener#stateChanged(javax.swing.event.ChangeEvent)
      */
-    public void stateChanged(ChangeEvent e) {
+    @Override
+	public void stateChanged(ChangeEvent e) {
 	SingleSelectionModel model = (SingleSelectionModel) e.getSource();
 	if(model.getSelectedIndex() == 0) {
 	    currentControls = buttons;
@@ -673,7 +677,7 @@ public class ButtonDemo extends DemoModule implements ChangeListener {
     public Vector getCurrentControls() {
 	return currentControls;
     }
-    
+
     //------------------------------------------------------------------------
     //add by jb2011 START
     /**
@@ -693,7 +697,7 @@ public class ButtonDemo extends DemoModule implements ChangeListener {
     	JLabel l1 = N9ComponentFactory.createLabel_style4(txt);
     	l1.setAlignmentX(Component.LEFT_ALIGNMENT);
     	parent.add(l1);
-    	
+
     	parent.add(c);
     }
 }
