@@ -20,10 +20,10 @@
         <druid.version>1.2.8</druid.version>
     </properties>
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-security</artifactId>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -37,10 +37,10 @@
 <!--            <artifactId>mybatis-spring-boot-starter</artifactId>-->
 <!--            <version>${mybatis.version}</version>-->
 <!--        </dependency>-->
-        <dependency>
-            <groupId>org.thymeleaf.extras</groupId>
-            <artifactId>thymeleaf-extras-springsecurity5</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.thymeleaf.extras</groupId>-->
+<!--            <artifactId>thymeleaf-extras-springsecurity5</artifactId>-->
+<!--        </dependency>-->
 
 
 <!--        警告：热部署插件会导致执行两次swing-->
@@ -61,11 +61,11 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-test</artifactId>
-            <scope>test</scope>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.security</groupId>-->
+<!--            <artifactId>spring-security-test</artifactId>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
 
         <!-- druid 驱动 -->
         <!-- https://mvnrepository.com/artifact/com.alibaba/druid -->
@@ -92,6 +92,55 @@
             <systemPath>${project.basedir}/lib/beautyeye_lnf.jar</systemPath>
         </dependency>
         <!-- beauty 相关的本地JAR -->
+
+        <!-- djnativeswing 相关的本地JAR -->
+        <dependency>
+            <groupId>djnativeswing</groupId>
+            <artifactId>djnativeswing</artifactId>
+            <version>4.3</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/djnativeswing.jar</systemPath>
+        </dependency>
+        <!-- djnativeswing 相关的本地JAR -->
+
+        <!-- djnativeswing-swt 相关的本地JAR -->
+        <dependency>
+            <groupId>djnativeswing_swt</groupId>
+            <artifactId>djnativeswing_swt</artifactId>
+            <version>4.3</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/djnativeswing-swt.jar</systemPath>
+        </dependency>
+        <!-- djnativeswing-swt 相关的本地JAR -->
+
+
+        <!-- https://mvnrepository.com/artifact/com.machinepublishers/jbrowserdriver -->
+        <dependency>
+            <groupId>com.machinepublishers</groupId>
+            <artifactId>jbrowserdriver</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.27</version>
+        </dependency>
+
+
+
+
+
+        <!-- org.eclipse.swt.win32.win32.x86_64-4.2 相关的本地JAR -->
+        <dependency>
+            <groupId>swt-4.3-win32-win32-x86_64</groupId>
+            <artifactId>swt-4.3-win32-win32-x86_64</artifactId>
+            <version>4.3</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/swt-4.3-win32-win32-x86_64.jar</systemPath>
+        </dependency>
+        <!-- org.eclipse.swt.win32.win32.x86_64-4.2 相关的本地JAR -->
 
         <!-- jsoup HTML parser library @ https://jsoup.org/ -->
         <dependency>

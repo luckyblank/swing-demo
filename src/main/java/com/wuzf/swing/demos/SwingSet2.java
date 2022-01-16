@@ -281,7 +281,7 @@ public class SwingSet2 extends JPanel {
 //			BeautyEyeLNFHelper.FrameBorderStyle.osLookAndFeelDecorated;
 ////		UIManager.setLookAndFeel(BeautyEyeLNFHelper.getBeautyEyeLNFCrossPlatform());//new WindowsLookAndFeel());
 		UIManager.put("RootPane.setupButtonVisible", false);
-		BeautyEyeLNFHelper.debug = true;
+		BeautyEyeLNFHelper.debug = false;
 //		BeautyEyeLNFHelper.translucencyAtFrameInactive = false;
 			BeautyEyeLNFHelper.launchBeautyEyeLNF();
 //		UIManager.put("ToolBar.border",new BorderUIResource(

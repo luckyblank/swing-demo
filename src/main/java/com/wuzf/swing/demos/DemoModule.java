@@ -17,6 +17,7 @@ package com.wuzf.swing.demos;/*
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
@@ -246,9 +247,12 @@ public class DemoModule extends JApplet {
 	    InputStreamReader isr;
 	    CodeViewer cv = new CodeViewer();
 	    URL url;
-	    
+        String worspaceAbPath = System.getProperty("user.dir");
+        String java_path ="\\src\\main\\java\\";
+	    String demo_path = "com\\wuzf\\swing\\demos\\";
 	    try {
-		url = getClass().getResource(filename); 
+	    String path = worspaceAbPath + java_path +demo_path + filename;
+		url = new File(path).toURL();
 		is = url.openStream();
 		isr = new InputStreamReader(is, "UTF-8");
 		BufferedReader reader = new BufferedReader(isr);
