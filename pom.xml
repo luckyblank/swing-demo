@@ -93,6 +93,36 @@
         </dependency>
         <!-- beauty 相关的本地JAR -->
 
+        <!-- djnativeswing 相关的本地JAR -->
+        <dependency>
+            <groupId>djnativeswing</groupId>
+            <artifactId>djnativeswing</artifactId>
+            <version>4.3</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/djnativeswing.jar</systemPath>
+        </dependency>
+        <!-- djnativeswing 相关的本地JAR -->
+
+        <!-- djnativeswing-swt 相关的本地JAR -->
+        <dependency>
+            <groupId>djnativeswing_swt</groupId>
+            <artifactId>djnativeswing_swt</artifactId>
+            <version>4.3</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/djnativeswing-swt.jar</systemPath>
+        </dependency>
+        <!-- djnativeswing-swt 相关的本地JAR -->
+
+        <!-- org.eclipse.swt.win32.win32.x86_64-4.2 相关的本地JAR -->
+        <dependency>
+            <groupId>swt-4.3-win32-win32-x86_64</groupId>
+            <artifactId>swt-4.3-win32-win32-x86_64</artifactId>
+            <version>4.3</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/swt-4.3-win32-win32-x86_64.jar</systemPath>
+        </dependency>
+        <!-- org.eclipse.swt.win32.win32.x86_64-4.2 相关的本地JAR -->
+
         <!-- jsoup HTML parser library @ https://jsoup.org/ -->
         <dependency>
             <groupId>org.jsoup</groupId>
