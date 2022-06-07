@@ -82,8 +82,8 @@ public class WzfJwebFrame extends JInternalFrame {
 
             @Override
             public void windowClosing(WebBrowserEvent arg0) {
-
                 System.out.println("windowClosing....");
+
             }
 
             @Override
@@ -151,7 +151,8 @@ public class WzfJwebFrame extends JInternalFrame {
         UIUtils.setPreferredLookAndFeel();
 
         if(!NativeInterface.isOpen()){
-            NativeInterface.open();
+
+            NativeInterface.initialize();
         }
 
         SwingUtilities.invokeLater(new Runnable() {
@@ -167,6 +168,7 @@ public class WzfJwebFrame extends JInternalFrame {
         });
         //介绍网站https://sourceforge.net/p/djproject/discussion/671154/thread/e813001e/
         NativeInterface.runEventPump();
+
 
     }
     public static JWebBrowser getJWebBrowser(String url){

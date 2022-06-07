@@ -62,7 +62,8 @@ public class UploadFileUtil {
         JFileChooser chooser = new JFileChooser();
         chooser.setMultiSelectionEnabled(true);
         /** 过滤文件类型 * */
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("文档文件",
+
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("war",
                 "xml", "txt", "doc", "docx");
         chooser.setFileFilter(filter);
         int returnVal = chooser.showOpenDialog(developer);
@@ -119,6 +120,7 @@ public class UploadFileUtil {
     public static void main(String[] args) {
         //初始化ui
         SwingSet2.initBeautyStyle();
+
         createUploadFrame("上传文件","管理员");
 
     }
