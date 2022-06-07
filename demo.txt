@@ -1,0 +1,11 @@
+INSERT INTO `swing_demo`.`t_customer`(`id`, `username`, `password`, `nick_name`, `role_code`, `jobs`, `phone`, `creat_time`, `last_login_time`) VALUES ('3333333333333333333', '12222222', '12233322', '1222233333333', '1', NULL, NULL, NULL, NULL);
+INSERT INTO `swing_demo`.`t_customer`(`id`, `username`, `password`, `nick_name`, `role_code`, `jobs`, `phone`, `creat_time`, `last_login_time`) VALUES ('3333333333333333333', '1223333322', '12233322', '1222233333333333', '1', NULL, NULL, NULL, NULL);
+INSERT INTO `swing_demo`.`t_customer`(`id`, `username`, `password`, `nick_name`, `role_code`, `jobs`, `phone`, `creat_time`, `last_login_time`) VALUES ('3333333333333333333', '122666622', '333333', '122223333333', '1', NULL, NULL, NULL, NULL);
+INSERT INTO `swing_demo`.`t_customer`(`id`, `username`, `password`, `nick_name`, `role_code`, `jobs`, `phone`, `creat_time`, `last_login_time`) VALUES ('3333333333333333333', '1226622', '12222', '12222333333333', '1', NULL, NULL, NULL, NULL);
+INSERT INTO `swing_demo`.`t_customer`(`id`, `username`, `password`, `nick_name`, `role_code`, `jobs`, `phone`, `creat_time`, `last_login_time`) VALUES ('3333333333333333333', '12266622', '12222', '12222333333333', '1', NULL, NULL, NULL, NULL);
+INSERT INTO `swing_demo`.`t_customer`(`id`, `username`, `password`, `nick_name`, `role_code`, `jobs`, `phone`, `creat_time`, `last_login_time`) VALUES ('3333333333333333333', '1226622', '12222', '12222333333333', '1', NULL, NULL, NULL, NULL);
+INSERT INTO `swing_demo`.`t_customer`(`id`, `username`, `password`, `nick_name`, `role_code`, `jobs`, `phone`, `creat_time`, `last_login_time`) VALUES ('3333333333333333333', '122666622', '1233222', '12222333333333', '1', NULL, NULL, NULL, NULL);
+INSERT INTO `swing_demo`.`t_customer`(`id`, `username`, `password`, `nick_name`, `role_code`, `jobs`, `phone`, `creat_time`, `last_login_time`) VALUES ('3333333333333333333', '1266222', '1223322', '1222233333333', '1', NULL, NULL, NULL, NULL);
+INSERT INTO `swing_demo`.`t_customer`(`id`, `username`, `password`, `nick_name`, `role_code`, `jobs`, `phone`, `creat_time`, `last_login_time`) VALUES ('3333333333333333333', '12666222', '1223322', '12222333333333', '1', NULL, NULL, NULL, NULL);
+
+
