@@ -93,6 +93,34 @@
         </dependency>
         <!-- beauty 相关的本地JAR -->
 
+        <!-- djnativeswing 相关的本地JAR -->
+        <dependency>
+            <groupId>djnativeswing</groupId>
+            <artifactId>djnativeswing</artifactId>
+            <version>4.3</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/djnativeswing.jar</systemPath>
+        </dependency>
+        <!-- djnativeswing 相关的本地JAR -->
+
+        <!-- djnativeswing-swt 相关的本地JAR -->
+        <dependency>
+            <groupId>djnativeswing_swt</groupId>
+            <artifactId>djnativeswing_swt</artifactId>
+            <version>4.3</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/djnativeswing-swt.jar</systemPath>
+        </dependency>
+        <!-- djnativeswing-swt 相关的本地JAR -->
+
+        <!-- https://mvnrepository.com/artifact/com.machinepublishers/jbrowserdriver -->
+        <dependency>
+            <groupId>com.machinepublishers</groupId>
+            <artifactId>jbrowserdriver</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+
+
         <!-- jsoup HTML parser library @ https://jsoup.org/ -->
         <dependency>
             <groupId>org.jsoup</groupId>
